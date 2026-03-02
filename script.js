@@ -1,20 +1,21 @@
-function unlock() {
-    const key = document.getElementById('key-input').value;
+function checkAccess() {
+    const key = document.getElementById('passkey').value;
     if (key === "KEY_95726398756235") {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('vault').style.display = 'block';
-        document.getElementById('bgm').play();
+        showPage('menu');
+        document.getElementById('audio').play();
     }
 }
 
-function tab(id) {
-    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+function showPage(pageId) {
+    document.querySelectorAll('.container').forEach(div => div.style.display = 'none');
+    document.getElementById(pageId + '-page').style.display = 'flex';
 }
 
-function generate() {
-    const c = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    let r = '';
-    for(let i=0; i<4; i++) r += c[Math.floor(Math.random()*c.length)];
-    document.getElementById('name-out').innerText = r;
+function generateUser() {
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789._';
+    let result = '';
+    for (let i = 0; i < 4; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById('gen-output').innerText = result;
 }
