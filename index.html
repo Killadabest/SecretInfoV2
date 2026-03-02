@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL | SECRET FILES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div id="login-screen">
+        <div class="login-box">
+            <h2 class="glitch" data-text="SYSTEM ENCRYPTED">SYSTEM ENCRYPTED</h2>
+            <p>ACCESS KEY REQUIRED FOR DECRYPTION</p>
+            <input type="text" id="access-key" placeholder="ENTER KEY..." autocomplete="off">
+            <button onclick="checkKey()">DECRYPT</button>
+            <p id="error-msg"></p>
+        </div>
+    </div>
+
+    <div id="main-page" style="display: none;">
+        <div class="sidebar">
+            <div class="user-profile">
+                <p class="real-name">DAVID SAFTOIU</p>
+                <p class="rank">LEVEL 4 ACCESS</p>
+            </div>
+            <button onclick="showSection('maria')" class="nav-btn">📂 MARIA FILES</button>
+            <button onclick="showSection('unknown')" class="nav-btn">📂 UNKNOWN INTEL</button>
+            <button onclick="showSection('generator')" class="nav-btn">⚙️ DISCORD GEN</button>
+        </div>
+
+        <div class="content-area">
+            <section id="maria" class="file-section">
+                <h3>MARIA_DATABASE_IMG</h3>
+                <div class="grid">
+                    <img src="https://cdn.discordapp.com/attachments/1476703556865228858/1478134453195902996/7476f09a-847b-4350-8151-f6dfc0ae11ee.png?ex=69a74b7c&is=69a5f9fc&hm=d4ae8a89ec80c31379395bf88979a17862cd1ae3e6c9ec9b13eb986bebc74b7d&">
+                    <img src="https://cdn.discordapp.com/attachments/1476703556865228858/1478134453703409664/f1c9f151-f5a0-4efb-a35e-6bf78f4a009c.png?ex=69a74b7c&is=69a5f9fc&hm=42258c6a0686474af46005759bd87acc15b2b6912d5e7991b87acf917cbb2804&">
+                </div>
+            </section>
+
+            <section id="unknown" class="file-section" style="display: none;">
+                <h3>CLASSIFIED_INTEL_IMG</h3>
+                <div class="grid">
+                    <img src="https://cdn.discordapp.com/attachments/1475627143387152454/1477794843853066251/IMG_4307.png?ex=69a6b7f2&is=69a56672&hm=042ee4104f58d2e5d1b7ff2d4eed36ce8503a94a68caef7755bd8e8765a73950&">
+                    <img src="https://cdn.discordapp.com/attachments/1475627143387152454/1477794844641591469/IMG_4306.png?ex=69a6b7f3&is=69a56673&hm=7c47ddcba26928790420b5db6f6a32ff1b895cbb589f02b8e8be81297a3fc3cc&">
+                    <img src="https://cdn.discordapp.com/attachments/1476703556865228858/1478134837725368330/image.png?ex=69a74bd7&is=69a5fa57&hm=93bf02e7c231fb38290e6ef36a652fbf9a6306c4a7241e23fe963c9e49bab6f1&">
+                </div>
+            </section>
+
+            <section id="generator" class="file-section" style="display: none;">
+                <h3>DISCORD_USER_TOOL.EXE</h3>
+                <div class="gen-card">
+                    <div id="display-name">XXXX</div>
+                    <button class="action-btn" onclick="generate()">GENERATE 4-CHAR</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <audio id="music" loop><source src="godzilla.mp3" type="audio/mpeg"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
