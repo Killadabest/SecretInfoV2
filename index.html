@@ -3,50 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KILLA | SECRET ARCHIVE</title>
+    <title>KILLA | ARCHIVE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="login-container">
-        <div class="glass-box">
-            <p class="real-name">DAVID SAFTOIU</p>
-            <h1 class="logo">KILLA</h1>
-            <input type="password" id="key-input" placeholder="ENTER ACCESS KEY">
-            <button onclick="unlock()">DECRYPT</button>
+    <div id="login-page" class="container">
+        <div class="glass-card">
+            <p class="subtitle">REAL NAME IS DAVID SAFTOIU</p>
+            <h1 class="main-title">KILLA</h1>
+            <div class="input-group">
+                <input type="password" id="passkey" placeholder="ACCESS KEY">
+                <button onclick="checkAccess()">DECRYPT</button>
+            </div>
         </div>
     </div>
 
-    <div id="vault" style="display: none;">
-        <div class="nav-bar">
-            <button onclick="tab('maria')">MARIA FILES</button>
-            <button onclick="tab('unknown')">UNKNOWN</button>
-            <button onclick="tab('gen')">4-CHAR GEN</button>
+    <div id="menu-page" class="container" style="display: none;">
+        <div class="glass-card">
+            <h1 class="main-title small">ARCHIVES</h1>
+            <div class="button-list">
+                <button onclick="showPage('maria')">MARIA FILES</button>
+                <button onclick="showPage('unknown')">UNKNOWN FILES</button>
+                <button onclick="showPage('gen')">USERNAME GEN</button>
+            </div>
+            <p class="now-playing">Currently Playing: <span>Eminem - Godzilla</span></p>
         </div>
+    </div>
 
-        <div id="maria" class="page">
-            <div class="grid">
+    <div id="maria-page" class="container" style="display: none;">
+        <div class="glass-card wide">
+            <button class="back-btn" onclick="showPage('menu')">← BACK</button>
+            <div class="info-box">
+                <p>Name: Dumitriu Maria Larisa</p>
+                <p>Age: 12</p>
+                <p>IQ: -100</p>
+            </div>
+            <div class="image-grid">
                 <img src="https://cdn.discordapp.com/attachments/1476703556865228858/1478134453195902996/7476f09a-847b-4350-8151-f6dfc0ae11ee.png?ex=69a74b7c&is=69a5f9fc&hm=d4ae8a89ec80c31379395bf88979a17862cd1ae3e6c9ec9b13eb986bebc74b7d&">
                 <img src="https://cdn.discordapp.com/attachments/1476703556865228858/1478134453703409664/f1c9f151-f5a0-4efb-a35e-6bf78f4a009c.png?ex=69a74b7c&is=69a5f9fc&hm=42258c6a0686474af46005759bd87acc15b2b6912d5e7991b87acf917cbb2804&">
             </div>
         </div>
+    </div>
 
-        <div id="unknown" class="page" style="display:none">
-            <div class="grid">
+    <div id="unknown-page" class="container" style="display: none;">
+        <div class="glass-card wide">
+            <button class="back-btn" onclick="showPage('menu')">← BACK</button>
+            <div class="image-grid">
                 <img src="https://cdn.discordapp.com/attachments/1475627143387152454/1477794843853066251/IMG_4307.png?ex=69a6b7f2&is=69a56672&hm=042ee4104f58d2e5d1b7ff2d4eed36ce8503a94a68caef7755bd8e8765a73950&">
                 <img src="https://cdn.discordapp.com/attachments/1475627143387152454/1477794844641591469/IMG_4306.png?ex=69a6b7f3&is=69a56673&hm=7c47ddcba26928790420b5db6f6a32ff1b895cbb589f02b8e8be81297a3fc3cc&">
                 <img src="https://cdn.discordapp.com/attachments/1476703556865228858/1478134837725368330/image.png?ex=69a74bd7&is=69a5fa57&hm=93bf02e7c231fb38290e6ef36a652fbf9a6306c4a7241e23fe963c9e49bab6f1&">
             </div>
         </div>
+    </div>
 
-        <div id="gen" class="page" style="display:none">
-            <div class="gen-ui">
-                <h2 id="name-out">----</h2>
-                <button onclick="generate()">GENERATE</button>
-            </div>
+    <div id="gen-page" class="container" style="display: none;">
+        <div class="glass-card">
+            <button class="back-btn" onclick="showPage('menu')">← BACK</button>
+            <h2 id="gen-output">----</h2>
+            <button class="gen-btn" onclick="generateUser()">GENERATE</button>
         </div>
     </div>
 
-    <audio id="bgm" loop><source src="godzilla.mp3" type="audio/mpeg"></audio>
+    <audio id="audio" loop><source src="godzilla.mp3" type="audio/mpeg"></audio>
     <script src="script.js"></script>
 </body>
 </html>
