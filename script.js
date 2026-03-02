@@ -1,23 +1,20 @@
-function checkKey() {
-    const key = document.getElementById('access-key').value;
+function unlock() {
+    const key = document.getElementById('key-input').value;
     if (key === "KEY_95726398756235") {
-        document.getElementById('login-screen').style.display = 'none';
-        document.getElementById('main-page').style.display = 'flex';
-        document.getElementById('music').play();
-    } else {
-        document.getElementById('error-msg').innerText = "SYSTEM_ERROR: ACCESS_DENIED";
-        document.getElementById('error-msg').style.color = "red";
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('vault').style.display = 'block';
+        document.getElementById('bgm').play();
     }
 }
 
-function showSection(id) {
-    document.querySelectorAll('.file-section').forEach(s => s.style.display = 'none');
+function tab(id) {
+    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
     document.getElementById(id).style.display = 'block';
 }
 
 function generate() {
-    const c = 'abcdefghijklmnopqrstuvwxyz0123456789._';
+    const c = 'abcdefghijklmnopqrstuvwxyz0123456789';
     let r = '';
-    for (let i = 0; i < 4; i++) r += c[Math.floor(Math.random() * c.length)];
-    document.getElementById('display-name').innerText = r;
+    for(let i=0; i<4; i++) r += c[Math.floor(Math.random()*c.length)];
+    document.getElementById('name-out').innerText = r;
 }
